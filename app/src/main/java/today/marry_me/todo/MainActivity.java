@@ -6,12 +6,14 @@ import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.view.Window;
 
 
 public class MainActivity extends ActionBarActivity
@@ -30,6 +32,9 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 启用窗口特征，启用带进度和不带进度的进度条
+
         setContentView(R.layout.activity_main);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -72,7 +77,12 @@ public class MainActivity extends ActionBarActivity
                         .replace(R.id.container, spinnerFragment)
                         .commit();
                 break;
-
+            case 4:
+                ProgressBarFragment progressBarFragment= new ProgressBarFragment();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, progressBarFragment)
+                        .commit();
+                break;
             default:
                 fragmentManager.beginTransaction()
                     .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
@@ -93,6 +103,9 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 4:
                 mTitle = getString(R.string.title_section4);
+                break;
+            case 5:
+                mTitle = getString(R.string.title_section5);
                 break;
         }
     }
