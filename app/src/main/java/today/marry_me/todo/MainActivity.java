@@ -66,6 +66,12 @@ public class MainActivity extends ActionBarActivity
                         .replace(R.id.container, gridViewFragment)
                         .commit();
                 break;
+            case 3:
+                SpinnerFragment spinnerFragment = new SpinnerFragment();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, spinnerFragment)
+                        .commit();
+                break;
 
             default:
                 fragmentManager.beginTransaction()

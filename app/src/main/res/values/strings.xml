@@ -4,7 +4,7 @@
     <string name="title_section1">课程列表</string>
     <string name="title_section2">日历</string>
     <string name="title_section3">GridView</string>
-    <string name="title_section4">Section 4</string>
+    <string name="title_section4">下拉</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
