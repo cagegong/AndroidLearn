@@ -60,6 +60,13 @@ public class MainActivity extends ActionBarActivity
                         .replace(R.id.container, calendarFragment)
                         .commit();
                 break;
+            case 2:
+                GridViewFragment gridViewFragment = new GridViewFragment();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, gridViewFragment)
+                        .commit();
+                break;
+
             default:
                 fragmentManager.beginTransaction()
                     .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
@@ -77,6 +84,9 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
+                break;
+            case 4:
+                mTitle = getString(R.string.title_section4);
                 break;
         }
     }
