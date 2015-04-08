@@ -18,4 +18,5 @@
     <string name="add">增加</string>
     <string name="reduce">减少</string>
     <string name="reset">重置</string>
+    <string name="show_progress_dialog">显示进度条对话框</string>
 </resources>
