@@ -46,47 +46,38 @@ public class MainActivity extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
     }
-
+    private void changeFragment(Fragment frag)
+    {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+            .replace(R.id.container, frag)
+            .commit();
+    }
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
         switch (position)
         {
             case 0:
-                CourseListFragment courseListFragment = new CourseListFragment();
-                fragmentManager.beginTransaction()
-                    .replace(R.id.container, courseListFragment)
-                    .commit();
+                changeFragment(new CourseListFragment());
                 break;
             case 1:
-                CalendarFragment calendarFragment = new CalendarFragment();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, calendarFragment)
-                        .commit();
+                changeFragment(new CalendarFragment());
                 break;
             case 2:
-                GridViewFragment gridViewFragment = new GridViewFragment();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, gridViewFragment)
-                        .commit();
+                changeFragment(new GridViewFragment());
                 break;
             case 3:
-                SpinnerFragment spinnerFragment = new SpinnerFragment();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, spinnerFragment)
-                        .commit();
+                changeFragment(new SpinnerFragment());
                 break;
             case 4:
-                ProgressBarFragment progressBarFragment= new ProgressBarFragment();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, progressBarFragment)
-                        .commit();
+                changeFragment(new ProgressBarFragment());
+                break;
+            case 5:
+                changeFragment(new WebViewFragment());
                 break;
             default:
-                fragmentManager.beginTransaction()
-                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                    .commit();
+                changeFragment(PlaceholderFragment.newInstance(position + 1));
         }
     }
 
