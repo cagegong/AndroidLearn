@@ -1,12 +1,14 @@
 package today.marry_me.todo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -46,6 +48,21 @@ public class MainActivity extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
     }
+
+    private void changeFragment (Class<?> cls) {
+        try {
+            Fragment frag = (Fragment) cls.newInstance();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, frag)
+                    .commit();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void changeFragment(Fragment frag)
     {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -53,28 +70,33 @@ public class MainActivity extends ActionBarActivity
             .replace(R.id.container, frag)
             .commit();
     }
+
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         switch (position)
         {
             case 0:
-                changeFragment(new CourseListFragment());
+                changeFragment(CourseListFragment.class);
                 break;
             case 1:
-                changeFragment(new CalendarFragment());
+                changeFragment(CalendarFragment.class);
                 break;
             case 2:
-                changeFragment(new GridViewFragment());
+                changeFragment(GridViewFragment.class);
                 break;
             case 3:
-                changeFragment(new SpinnerFragment());
+                changeFragment(SpinnerFragment.class);
                 break;
             case 4:
-                changeFragment(new ProgressBarFragment());
+                changeFragment(ProgressBarFragment.class);
                 break;
             case 5:
-                changeFragment(new WebViewFragment());
+                changeFragment(WebViewFragment.class);
+                break;
+            case 6:
+                Intent intent = new Intent(this, MainActivity2Activity.class);
+                startActivity(intent);
                 break;
             default:
                 changeFragment(PlaceholderFragment.newInstance(position + 1));
@@ -97,6 +119,12 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 5:
                 mTitle = getString(R.string.title_section5);
+                break;
+            case 6:
+                mTitle = getString(R.string.title_section6);
+                break;
+            case 7:
+                mTitle = getString(R.string.title_section7);
                 break;
         }
     }

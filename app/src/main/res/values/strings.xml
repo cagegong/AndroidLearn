@@ -7,7 +7,7 @@
     <string name="title_section4">下拉</string>
     <string name="title_section5">ProgressBar</string>
     <string name="title_section6">Web View</string>
-    <string name="title_section7">section 7</string>
+    <string name="title_section7">Another Activity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -19,4 +19,6 @@
     <string name="reduce">减少</string>
     <string name="reset">重置</string>
     <string name="show_progress_dialog">显示进度条对话框</string>
+    <string name="title_activity_main_activity2">MainActivity2Activity</string>
+    <string name="hello_world">Hello world!</string>
 </resources>
