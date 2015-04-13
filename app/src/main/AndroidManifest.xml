@@ -30,6 +30,14 @@
             android:name=".MainActivity2Activity"
             android:label="@string/title_activity_main_activity2" >
         </activity>
+        <activity
+            android:name=".LayoutActivity"
+            android:label="@string/title_activity_layout" >
+        </activity>
+        <activity
+            android:name=".ViewPagerActivity"
+            android:label="@string/title_activity_view_pager" >
+        </activity>
     </application>
 
 </manifest>

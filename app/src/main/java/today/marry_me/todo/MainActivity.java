@@ -98,6 +98,10 @@ public class MainActivity extends ActionBarActivity
                 Intent intent = new Intent(this, MainActivity2Activity.class);
                 startActivity(intent);
                 break;
+            case 7:
+                Intent intent2 = new Intent(this, ViewPagerActivity.class);
+                startActivity(intent2);
+                break;
             default:
                 changeFragment(PlaceholderFragment.newInstance(position + 1));
         }
@@ -125,6 +129,8 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 7:
                 mTitle = getString(R.string.title_section7);
+            case 8:
+                mTitle = getString(R.string.title_section8);
                 break;
         }
     }

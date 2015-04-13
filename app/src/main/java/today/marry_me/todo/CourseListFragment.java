@@ -1,6 +1,7 @@
 package today.marry_me.todo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -32,7 +33,15 @@ public class CourseListFragment extends Fragment {
         // root 加载layout的ViewGroup
         // attachToRoot: false, 不返回父viewGroup
         Log.i("Main", "Fragment1---onCreateView()");
-        return inflater.inflate(R.layout.course_list_fragment, container, false);
+        View view = inflater.inflate(R.layout.course_list_fragment, container, false);
+        view.findViewById(R.id.goLayoutButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CourseListFragment.this.getActivity(), LayoutActivity.class);
+                startActivity(intent);
+            }
+        });
+        return view;
     }
 
     @Override

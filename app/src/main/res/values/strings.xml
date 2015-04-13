@@ -21,4 +21,7 @@
     <string name="show_progress_dialog">显示进度条对话框</string>
     <string name="title_activity_main_activity2">MainActivity2Activity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_layout">LayoutActivity</string>
+    <string name="title_activity_view_pager">ViewPagerActivity</string>
+    <string name="title_section8">View Pager</string>
 </resources>
